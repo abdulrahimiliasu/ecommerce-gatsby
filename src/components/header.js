@@ -1,34 +1,27 @@
 import * as React from "react"
 import PropTypes from "prop-types"
+import styled from "styled-components"
+import MenuButton from "./buttons/menuButton"
+import { StaticImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
+  <Wrapper>
+    <Link to="/">
+      <StaticImage
+        src="../images/gatsby-icon.png"
+        placeholder="blurred"
+        layout="fixed"
+        width={50}
+        height={50}
+      />
+    </Link>
+    <ContentWrapper>
+      <MenuButton to="/" title="Headphones"></MenuButton>
+      <MenuButton to="/" title="Cases"></MenuButton>
+      <MenuButton to="/" title="Chargers"></MenuButton>
+    </ContentWrapper>
+  </Wrapper>
 )
 
 Header.propTypes = {
@@ -40,3 +33,19 @@ Header.defaultProps = {
 }
 
 export default Header
+
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 20px;
+`
+
+const ContentWrapper = styled.div`
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  gap: 10px;
+  background-color: white;
+  border-radius: 20px;
+  padding: 10px;
+`
