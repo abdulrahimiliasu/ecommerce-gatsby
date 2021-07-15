@@ -2,8 +2,6 @@ import * as React from "react"
 import styled from "styled-components"
 import { graphql } from "gatsby"
 import Header from "../components/header"
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
 import SecondaryButton from "../components/buttons/SecondaryButton"
 import Gallery from "@browniebroke/gatsby-image-gallery"
 
