@@ -1,16 +1,21 @@
 import * as React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import SignInForm from "../components/forms/SignInForm"
+import getFirebase from "../model/firebase"
 
-const SecondPage = () => (
-  <Layout>
-    <Seo title="Page two" />
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
-  </Layout>
-)
-
-export default SecondPage
+export default function SecondPage() {
+  React.useEffect(() => {
+    let instance = getFirebase()
+    if (instance) {
+      alert("Succes")
+    }
+  }, [])
+  return (
+    <Layout>
+      <Seo title="Sign In" />
+      <SignInForm />
+    </Layout>
+  )
+}

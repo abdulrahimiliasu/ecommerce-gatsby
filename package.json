@@ -7,6 +7,7 @@
   "dependencies": {
     "@browniebroke/gatsby-image-gallery": "^6.2.2",
     "babel-plugin-styled-components": "^1.13.2",
+    "firebase": "^8.7.1",
     "gatsby": "^3.9.0",
     "gatsby-plugin-gatsby-cloud": "^2.9.0",
     "gatsby-plugin-image": "^1.9.0",
